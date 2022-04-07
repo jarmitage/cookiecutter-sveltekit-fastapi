@@ -3,9 +3,7 @@ import node from "@sveltejs/adapter-node";
 
 const config = {
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
-		adapter: node({ env: { port: process.env.PORT } }),
+		adapter: node({ envPrefix: { port: process.env.PORT } }),
 		vite: () => ({
 			server: {
 				proxy: {
